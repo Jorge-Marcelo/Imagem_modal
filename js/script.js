@@ -1,13 +1,28 @@
+/*
+Autor: Jorge Marcelo
+Data de Criação: 26/08/2023
+Github: https://github.com/Jorge-Marcelo
+Linkedin: https://www.linkedin.com/in/jorge-marcelo-067a5017b/
+Instagram: https://www.instagram.com/10_stronger/
+Threads: https://www.threads.net/@10_stronger
+*/ 
+
+
+/*Selecionando os elementos HTML atravez do DOM*/
 let modal = document.getElementById("myModal");
 let modalImg = document.getElementById("modalImg");
 let span = document.getElementById("close");
 let miniaturas = document.querySelectorAll(".miniatura");
 
+/*Função que va abrir o modal*/
 function abrirModal(imgSrc){
 modal.style.display = "block";
 modalImg.src = imgSrc;
 }
 
+/*Função que vai adicionar 
+o evento de clique as miniaturas e 
+abrir o modal*/
 function miniatura(){
 miniaturas.forEach(miniatura =>{
 miniatura.addEventListener("click", function(){
@@ -16,12 +31,14 @@ abrirModal(miniatura.src);
 })
 }
 
+/*Função que vai abrir o modal*/
 function fecharModal(){
 span.addEventListener("click", function(){
 modal.style.display = "none";
 })
 }
 
+/*Caso clique fora da imagem o modal será fechado*/
 function cliqueFora(event){
 window.addEventListener("click", function(event){
 if (event.target === modal){
@@ -30,7 +47,9 @@ modal.style.display = "none";
 })
 }
 
-
+/*Chamando as funções
+miniatura, fecharModal 
+w cliqueFora*/
 miniatura();
 fecharModal();
 cliqueFora();
